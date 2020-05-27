@@ -2,97 +2,148 @@
 InGateway902系列边缘计算网关（以下简称IG902）支持托管docker镜像，您可以将您的docker镜像发布到IG902上，快速部署和运行您自行开发的应用程序。为了说明如何使用IG902的Docker环境，本文档将演示如何在IG902上运行一个Nginx镜像，该镜像用于HTTP，HTTPS，SMTP，POP3和IMAP协议的开源反向代理服务器，以及负载平衡器，HTTP缓存和Web服务器。  <br/>
 Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中,然后发布到任何流行的Linux机器或Windows 机器上,也可以实现虚拟化,容器是完全使用沙箱机制,相互之间不会有任何接口。
 
+  - [1.准备IG902硬件设备及其网络环境](#prepare-ig902-hardware-and-network-environment)
+    - [1.1 接通IG902电源并使用网线连接PC](#connect-ig902-to-the-power-source-and-to-a-pc-with-a-network-cable)
+    - [1.2 设置LAN网络参数：在局域网访问IG902](#set-lan-parameters)
+    - [1.3 设置WAN网络参数：连接Internet](#set-wan-parameters)
+    - [1.4 更新IG902固件版本](#update-the-firmware)
+  - [2.启用并配置Docker管理器](#enable-and-configure-docker-manager)
+    - [2.1 安装Docker SDK并启用Docker管理器](#install-docker-sdk-and-enable-docker-manager)
+    - [2.2 配置Docker管理器--Portainer](#configure-docker-manager-portainer)
+      - [2.2.1 访问Portainer](#access-portainer)
+      - [2.2.2 添加docker镜像](#add-docker-image)
+      - [2.2.3 配置并部署容器](#configure-and-deploy-container)
+  - [附录](#附录)
+    - [如何从gitlab/github上下载docker镜像](#how-to-download-docker-images-from-gitlab-github)
+
+<a id="prepare-ig902-hardware-and-network-environment"> </a>  
+
 ## 1.准备IG902硬件设备及其网络环境
+
+<a id="connect-ig902-to-the-power-source-and-to-a-pc-with-a-network-cable"> </a>  
+
 ### 1.1 接通IG902电源并使用网线连接PC
-接通IG902的电源并按照拓扑使用以太网线连接PC和IG902。  <br/>
+接通IG902的电源并按照拓扑使用以太网线连接PC和IG902。  
+
 ![](images/2020-01-21-10-07-32.png)
+
+<a id="set-lan-parameters"> </a>  
 
 ### 1.2 设置LAN网络参数：在局域网访问IG902
 设置IG902LAN网络参数，请参考[在局域网访问IG902](https://ingateway-firmware-cn.readthedocs.io/zh_CN/latest/IG902%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#lan-ig902)。
 
+<a id="set-wan-parameters"> </a>  
+
 ### 1.3 设置WAN网络参数：连接Internet
 设置IG902 WAN网络参数，请参考[IG902连接Internet](https://ingateway-firmware-cn.readthedocs.io/zh_CN/latest/IG902%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#wan-internet)。
+
+<a id="update-the-firmware"> </a>  
 
 ### 1.4 更新IG902固件版本
 如需获取IG902产品最新固件版本及其功能特性信息，请联系客服。如需更新IG902的固件版本，请参考[更新IG902软件版本](https://ingateway-firmware-cn.readthedocs.io/zh_CN/latest/IG902%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#id1)。<font color=#FF0000>（固件版本应为2.0.0.r12057及以上）</font>
 
+<a id="enable-and-configure-docker-manager"> </a>  
+
 ## 2.启用并配置Docker管理器
+
+<a id="install-docker-sdk-and-enable-docker-manager"> </a>  
+
 ### 2.1 安装Docker SDK并启用Docker管理器
 Docker SDK集成了运行docker镜像所需的运行环境以及docker镜像管理器，在使用Docker前必须先安装Docker SDK。如需获取Docker SDK请联系客服。  </br>
-- 步骤1：已有Docker SDK后，进入IG902的“边缘计算>>Docker管理”页面，关闭Docker管理器并导入Docker SDK。
-![](images/2020-02-11-15-44-40.png)  </br>
-   &nbsp;
+- 步骤1：已有Docker SDK后，进入IG902的“边缘计算>>Docker管理”页面，关闭Docker管理器并导入Docker SDK。  
 
-- 步骤2：导入后，IG902将自动安装Docker SDK，安装过程通常需要1-2分钟，请耐心等候。安装成功后，勾选启用Docker管理器并点击“提交”。
-![](images/2020-02-11-09-12-14.png)  </br>
-   &nbsp;
+  ![](images/2020-02-11-15-44-40.png)  
+
+- 步骤2：导入后，IG902将自动安装Docker SDK，安装过程通常需要1-2分钟，请耐心等候。安装成功后，勾选启用Docker管理器并点击“提交”。  
+
+  ![](images/2020-02-11-09-12-14.png)  
    
-- 步骤3：启用Docker管理器后，可以修改访问Docker管理器的端口号和登录密码。
-![](images/2020-02-11-14-09-18.png)
+- 步骤3：启用Docker管理器后，可以修改访问Docker管理器的端口号和登录密码。  
+
+  ![](images/2020-02-11-14-09-18.png)
+
+<a id="configure-docker-manager-portainer"> </a>  
 
 ### 2.2 配置Docker管理器--Portainer
 IG902使用Portainer构建，管理和维护Docker镜像和容器。关于Portainer的详细介绍和使用说明请查看[Portainer官网](https://www.portainer.io/overview/)。本文档将为您演示如何在IG902上添加并部署运行一个Nginx docker镜像。
 
+<a id="access-portainer"> </a>  
+
 #### 2.2.1 访问Portainer
-- 步骤1：点击Portainer的访问按钮，随后Portainer会提示您需要输入用户名和密码。此时从IG902的“边缘计算>>Docker管理”页面复制用户名和设置的密码后并点击“登录”即可。
-![](images/2020-02-11-14-10-38.png)
-![](images/2020-01-14-16-02-20.png)  </br>
-   &nbsp;
+- 步骤1：点击Portainer的访问按钮，随后Portainer会提示您需要输入用户名和密码。此时从IG902的“边缘计算>>Docker管理”页面复制用户名和设置的密码后并点击“登录”即可。  
+
+  ![](images/2020-02-11-14-10-38.png)  
+
+  ![](images/2020-01-14-16-02-20.png)  
    
-- 步骤2：登录成功后如下图所示，选择“Local”以使用Portainer管理IG902上的docker镜像，随后点击“Connect”。
-![](images/2020-01-14-16-20-37.png)  </br>
-   &nbsp;
+- 步骤2：登录成功后如下图所示，选择“Local”以使用Portainer管理IG902上的docker镜像，随后点击“Connect”。  
+
+  ![](images/2020-01-14-16-20-37.png)  
    
-- 步骤3：在Portainer的“Home”页面，选择local以管理IG902上的docker镜像。
-![](images/2020-01-14-16-21-43.png)  </br>
-   &nbsp;
+- 步骤3：在Portainer的“Home”页面，选择local以管理IG902上的docker镜像。  
+
+  ![](images/2020-01-14-16-21-43.png)  
    
-  随后会跳转至本地仪表板，可在此页面概览IG902的容器和镜像等信息。
-![](images/2020-01-14-16-22-43.png)
+  随后会跳转至本地仪表板，可在此页面概览IG902的容器和镜像等信息。  
+
+  ![](images/2020-01-14-16-22-43.png)
+
+<a id="add-docker-image"> </a>  
 
 #### 2.2.2 添加docker镜像
 为Portainer添加docker镜像的方法有两种：
-- 方法1：从IG902的“边缘计算>>Docker管理”页面导入本地docker镜像。（导入所需时间根据docker镜像大小而不同；当docker镜像较大时，请耐心等待）
-![](images/2020-02-11-14-11-20.png)  </br>
-   &nbsp;
+- 方法1：从IG902的“边缘计算>>Docker管理”页面导入本地docker镜像。（导入所需时间根据docker镜像大小而不同；当docker镜像较大时，请耐心等待）  
+
+  ![](images/2020-02-11-14-11-20.png)  
    
-  导入后在Portainer的“Local>>Images”页面可以看到导入成功的docker镜像。
-![](images/2020-01-14-17-24-07.png)  </br>
-   &nbsp;
+  导入后在Portainer的“Local>>Images”页面可以看到导入成功的docker镜像。  
+
+  ![](images/2020-01-14-17-24-07.png)  
    
-- 方法2：进入Portainer的“Local>>Images”页面，从DockerHub中下载“nginx”docker镜像。（下载镜像所需时间根据镜像大小而不同；当docker镜像较大时，请耐心等待）
-![](images/2020-01-13-17-56-38.png)  </br>
-   &nbsp;
+- 方法2：进入Portainer的“Local>>Images”页面，从DockerHub中下载“nginx”docker镜像。（下载镜像所需时间根据镜像大小而不同；当docker镜像较大时，请耐心等待）  
+
+  ![](images/2020-01-13-17-56-38.png)  
    
-  docker镜像下载完成后如下图所示，在Portainer的“Local>>Images”中能够看到相应的docker镜像信息。
-![](images/2020-01-13-18-02-33.png)
+  docker镜像下载完成后如下图所示，在Portainer的“Local>>Images”中能够看到相应的docker镜像信息。  
+
+  ![](images/2020-01-13-18-02-33.png)
+
+<a id="configure-and-deploy-container"> </a>  
 
 #### 2.2.3 配置并部署容器
-- 步骤1：进入Portainer的“Local>>Containers”页面，点击“Add container”以添加一个新容器。
-![](images/2020-01-13-18-08-05.png)  </br>
-   &nbsp;
+- 步骤1：进入Portainer的“Local>>Containers”页面，点击“Add container”以添加一个新容器。  
+
+  ![](images/2020-01-13-18-08-05.png)  
    
-- 步骤2：为容器配置运行参数并部署容器。
-![](images/2020-01-13-18-12-53.png)  </br>
-   &nbsp;
+- 步骤2：为容器配置运行参数并部署容器。  
+
+  ![](images/2020-01-13-18-12-53.png)  
    
-- 步骤3：部署后容器会自动运行，在Portainer的“Local>>Containers”页面可以查看容器运行情况。
-![](images/2020-01-13-18-16-28.png)  </br>
-   &nbsp;
+- 步骤3：部署后容器会自动运行，在Portainer的“Local>>Containers”页面可以查看容器运行情况。  
+
+  ![](images/2020-01-13-18-16-28.png)  
    
-- 步骤4：在浏览器中输入容器中配置的Nginx访问链接（IG902的IP地址 + 端口号）后可以看到Nginx的欢迎页面。说明Nginx docker镜像已正常运行在IG902上；至此，完成了在IG902上添加并部署运行一个Nginx docker镜像。
-![](images/2020-01-14-17-42-52.png)
+- 步骤4：在浏览器中输入容器中配置的Nginx访问链接（IG902的IP地址 + 端口号）后可以看到Nginx的欢迎页面。说明Nginx docker镜像已正常运行在IG902上；至此，完成了在IG902上添加并部署运行一个Nginx docker镜像。  
 
-## 3. 附录
-### 3.1 如何从gitlab/github上下载docker镜像
-在Portainer的“Local>>Registries”页面点击“Add registry”以添加docker镜像仓库（必须为公开的仓库）。
-![](images/2020-01-19-10-39-19.png)  </br>
+  ![](images/2020-01-14-17-42-52.png)
 
-随后选择“Custom registry”并配置镜像仓库信息，配置完毕后点击“Add registry”。
-![](images/2020-01-19-10-41-31.png)  </br>
+## 附录
 
-镜像仓库添加成功后如下图所示：
-![](images/2020-01-19-10-44-22.png)  </br>
+<a id="how-to-download-docker-images-from-gitlab-github"> </a>  
 
-添加成功后，在拉取docker镜像时可以选择已配置的镜像仓库。
+### 如何从gitlab/github上下载docker镜像
+在Portainer的“Local>>Registries”页面点击“Add registry”以添加docker镜像仓库（必须为公开的仓库）。  
+
+![](images/2020-01-19-10-39-19.png)  
+
+随后选择“Custom registry”并配置镜像仓库信息，配置完毕后点击“Add registry”。  
+
+![](images/2020-01-19-10-41-31.png)  
+
+镜像仓库添加成功后如下图所示：  
+
+![](images/2020-01-19-10-44-22.png)  
+
+添加成功后，在拉取docker镜像时可以选择已配置的镜像仓库。  
+
 ![](images/2020-01-19-10-45-04.png)
