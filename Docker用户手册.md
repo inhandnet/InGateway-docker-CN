@@ -13,7 +13,7 @@ Docker 是一个开源的应用容器引擎，让开发者可以打包他们的�
       - [2.2.1 访问Portainer](#access-portainer)
       - [2.2.2 添加docker镜像](#add-docker-image)
       - [2.2.3 配置并部署容器](#configure-and-deploy-container)
-  - [附录](#附录)
+  - [附录](#appendix)
     - [如何从gitlab/github上下载docker镜像](#how-to-download-docker-images-from-gitlab-github)
 
 <a id="prepare-ig902-hardware-and-network-environment"> </a>  
@@ -126,6 +126,8 @@ IG902使用Portainer构建，管理和维护Docker镜像和容器。关于Portai
 - 步骤4：在浏览器中输入容器中配置的Nginx访问链接（IG902的IP地址 + 端口号）后可以看到Nginx的欢迎页面。说明Nginx docker镜像已正常运行在IG902上；至此，完成了在IG902上添加并部署运行一个Nginx docker镜像。  
 
   ![](images/2020-01-14-17-42-52.png)
+
+<a id="appendix"> </a>  
 
 ## 附录
 
