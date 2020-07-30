@@ -49,3 +49,4 @@ Docker 是一个开源的应用容器引擎，让开发者可以打包他们的�
    :caption: 用户手册
 
    Docker用户手册.md
+   Azure-Edge.md
