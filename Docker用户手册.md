@@ -4,8 +4,8 @@ Docker 是一个开源的应用容器引擎，让开发者可以打包他们的�
 
   - [1.准备IG902硬件设备及其网络环境](#prepare-ig902-hardware-and-network-environment)
     - [1.1 接通IG902电源并使用网线连接PC](#connect-ig902-to-the-power-source-and-to-a-pc-with-a-network-cable)
-    - [1.2 设置LAN网络参数：在局域网访问IG902](#set-lan-parameters)
-    - [1.3 设置WAN网络参数：连接Internet](#set-wan-parameters)
+    - [1.2 访问IG902](#set-lan-parameters)
+    - [1.3 IG902连接Internet](#set-wan-parameters)
     - [1.4 更新IG902固件版本](#update-the-firmware)
   - [2.启用并配置Docker管理器](#enable-and-configure-docker-manager)
     - [2.1 安装Docker SDK并启用Docker管理器](#install-docker-sdk-and-enable-docker-manager)
@@ -20,6 +20,7 @@ Docker 是一个开源的应用容器引擎，让开发者可以打包他们的�
     - [通过容器构建镜像（创建镜像保存容器配置）](#build-images-from-containers)
     - [如何从gitlab/github上下载docker镜像](#how-to-download-docker-images-from-gitlab-github)
   - [FAQ](#faq)
+    - [在“Images”页面拉取镜像提示成功，但是在“Images”页面中未显示拉取到的镜像](#q1)
 
 
 <a id="prepare-ig902-hardware-and-network-environment"> </a>  
@@ -35,13 +36,13 @@ Docker 是一个开源的应用容器引擎，让开发者可以打包他们的�
 
 <a id="set-lan-parameters"> </a>  
 
-### 1.2 设置LAN网络参数：在局域网访问IG902
-设置IG902LAN网络参数，请参考[在局域网访问IG902](http://manual.ig.inhand.com.cn/zh_CN/latest/IG902%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#lan-ig902)。
+### 1.2 访问IG902
+访问IG902，请参考[访问IG902](http://manual.ig.inhand.com.cn/zh_CN/latest/IG902%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#lan-ig902)。
 
 <a id="set-wan-parameters"> </a>  
 
-### 1.3 设置WAN网络参数：连接Internet
-设置IG902 WAN网络参数，请参考[IG902连接Internet](http://manual.ig.inhand.com.cn/zh_CN/latest/IG902%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#wan-internet)。
+### 1.3 IG902连接Internet
+设置IG902联网，请参考[IG902连接Internet](http://manual.ig.inhand.com.cn/zh_CN/latest/IG902%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#wan-internet)。
 
 <a id="update-the-firmware"> </a>  
 
@@ -244,7 +245,10 @@ IG902使用Portainer构建，管理和维护Docker镜像和容器。关于Portai
 
 
 ## FAQ
-- Q1：在“Images”页面拉取镜像提示成功，但是在“Images”页面中未显示拉取到的镜像。
+
+<a id="q1"> </a>  
+
+### Q1：在“Images”页面拉取镜像提示成功，但是在“Images”页面中未显示拉取到的镜像。
   
   A1：因为IG902的CPU架构为linux/arm/v7，因此只有支持linux/arm/v7架构的镜像可以正常在IG902中运行，其他如window/amd64等架构的镜像可能无法正常导入、拉取或在IG902中运行。请确认拉取的镜像是否支持linux/arm/v7。  
 
