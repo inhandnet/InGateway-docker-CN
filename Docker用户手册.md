@@ -151,11 +151,11 @@ IG902使用Portainer构建，管理和维护Docker镜像和容器。关于Portai
 ### 在容器中调用串口进行通讯
 部署容器时，在Portainer的“Advanced container settings>>Volumes”页面添加一条“Volume mapping”。下图将IG902的dev目录中的文件映射到了容器中的dev目录下（IG902的dev目录中包含了相应的接口文件）：  
 
-![](images/2020-06-29-10-21-33.png)  
+![](images/2020-07-31-16-41-20.png)  
 
 在Portainer的“Advanced container settings>>Runtime & Resouces”页面启用“Privileged mode”（未启用时使用串口会提示没有操作权限）  
 
-![](images/2020-06-29-10-29-12.png)
+![](images/2020-07-31-16-42-05.png)
 
 设置完毕后部署容器，随后在容器的console中进入dev目录可以看到`ttyO1`，`ttyO3`等接口文件。  
 
