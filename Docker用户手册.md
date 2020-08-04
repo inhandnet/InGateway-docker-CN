@@ -99,19 +99,11 @@ IG902使用Portainer构建，管理和维护Docker镜像和容器。关于Portai
 
 #### 2.2.2 添加docker镜像
 为Portainer添加docker镜像的方法有两种：
-- 方法1：从IG902的“边缘计算>>Docker管理”页面导入本地docker镜像。（导入所需时间根据docker镜像大小而不同；当docker镜像较大时，请耐心等待）  
-
-  ![](images/2020-07-01-16-17-22.png)  
-   
-  导入后在Portainer的“Local>>Images”页面可以看到导入成功的docker镜像。  
-
-  ![](images/2020-01-14-17-24-07.png)  
-
-- 方法2：进入Portainer的“Local>>Images”页面，点击“Import”导入镜像  
+- 方法1：进入Portainer的“Local>>Images”页面，点击“Import”导入镜像  
 
   ![](images/2020-06-29-14-50-49.png)
 
-- 方法3：进入Portainer的“Local>>Images”页面，从DockerHub中下载“nginx”docker镜像。（下载镜像所需时间根据镜像大小而不同；当docker镜像较大时，请耐心等待）  
+- 方法2：进入Portainer的“Local>>Images”页面，从DockerHub中下载“nginx”docker镜像。（下载镜像所需时间根据镜像大小而不同；当docker镜像较大时，请耐心等待）  
 
   ![](images/2020-01-13-17-56-38.png)  
    
@@ -250,8 +242,8 @@ IG902使用Portainer构建，管理和维护Docker镜像和容器。关于Portai
 
 ### Q1：在“Images”页面拉取镜像提示成功，但是在“Images”页面中未显示拉取到的镜像。
   
-  A1：因为IG902的CPU架构为linux/arm/v7，因此只有支持linux/arm/v7架构的镜像可以正常在IG902中运行，其他如window/amd64等架构的镜像可能无法正常导入、拉取或在IG902中运行。请确认拉取的镜像是否支持linux/arm/v7。  
+A1：因为IG902的CPU架构为linux/arm/v7，因此只有支持linux/arm/v7架构的镜像可以正常在IG902中运行，其他如window/amd64等架构的镜像可能无法正常导入、拉取或在IG902中运行。请确认拉取的镜像是否支持linux/arm/v7。  
 
-  ![](images/2020-06-28-15-25-10.png)  
+![](images/2020-06-28-15-25-10.png)  
 
-  ![](images/2020-06-28-15-25-46.png)
+![](images/2020-06-28-15-25-46.png)
