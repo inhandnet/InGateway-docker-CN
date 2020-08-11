@@ -165,11 +165,11 @@ IG902使用Portainer构建，管理和维护Docker镜像和容器。关于Portai
 ### 在IG902中运行Ubuntu
 - 步骤1：在Portainer的“Local>>Images”页面拉取Ubuntu镜像，如下图所示：  
 
-  ![](images/2020-06-29-13-45-37.png)  
+  ![](images/2020-06-29-13-51-58.png)  
 
 - 步骤2：进入Portainer的“Local>>Containers”页面，点击“Add container”以添加一个新容器。容器所使用的镜像选择上一步下载的Ubuntu镜像，同时在“Advanced container settings>>Command &logging”中勾选“Console”中的“Interactive & TTY (-i -t)”项。配置完成后点击“Deploy the container”部署容器。  
 
-  ![](images/2020-06-29-13-51-58.png)  
+  ![](images/2020-06-29-13-45-37.png)  
 
   ![](images/2020-06-29-13-52-14.png)  
 
