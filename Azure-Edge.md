@@ -78,17 +78,17 @@ Azure IoT Edge 将云分析和自定义业务逻辑移到设备，这样你的�
 <a id="configure-wan"> </a>  
 
 #### 1.2.1 配置IG902连接Internet
-配置IG902连接Internet，请参考[IG902连接Internet](http://manual.ig.inhand.com.cn/zh_CN/latest/IG902%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#wan-internet)。
+配置IG902连接Internet，请参考[IG902连接Internet](http://manual.ig.inhand.com.cn/zh_CN/latest/IG902-Quick-Start-Manual-CN.html#set-wan-parameters)。
 
 <a id="update-ig902-software-version"> </a>  
 
 #### 1.2.2 更新IG902软件版本
 - 更新IG902固件版本  
 
-  如何更新IG902固件版本请参考[更新IG902软件版本](http://manual.ig.inhand.com.cn/zh_CN/latest/IG902%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#id1)。
+  如何更新IG902固件版本请参考[更新IG902软件版本](http://manual.ig.inhand.com.cn/zh_CN/latest/IG902-Quick-Start-Manual-CN.html#update-the-software)。
 - 更新IG902 Docker SDK  
 
-  如何更新IG902 Docker SDK请参考[安装Docker SDK](http://docker.ig.inhand.com.cn/zh_CN/latest/Docker%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C.html#docker-sdkdocker)
+  如何更新IG902 Docker SDK请参考[安装Docker SDK](http://docker.ig.inhand.com.cn/zh_CN/latest/Docker-user-manual-CN.html#install-docker-sdk-and-enable-docker-manager)
 - 更新IG902 Azure IoT Edge SDK  
 
   进入“边缘计算 >> 云厂商边缘计算”页面，取消勾选“启用安全守护程序”后，点击“升级”按钮，选择Azure IoT Edge SDK文件并点击“确定”。  
