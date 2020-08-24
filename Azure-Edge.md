@@ -17,9 +17,9 @@ Azure IoT Edge 将云分析和自定义业务逻辑移到设备，这样你的�
 ## 1. 环境准备
 开始之前，你需要准备以下事项（如何获取IG902软件版本请联系客服）：
 - Azure IoT账户
-- IG902固件版本：v2.0.0.r12644及以上
-- Docker SDK版本：18.06.3-ce及以上
-- Azure IoT Edge SDK版本：1.0.4及以上
+- IG902固件版本：`v2.0.0.r12644`及以上
+- Docker SDK版本：`18.06.3-ce`及以上
+- Azure IoT Edge SDK版本：`1.0.4`及以上
 - IG902系列产品
 
 <a id="configure-azure-iot-environment"> </a>  
@@ -27,12 +27,14 @@ Azure IoT Edge 将云分析和自定义业务逻辑移到设备，这样你的�
 ### 1.1 配置Azure IoT环境
 如果你已经在Azure IoT上配置了相应的IoT Hub和IoT Edge设备，可以跳过这一小节。
 - 步骤1：登录Azure IoT  
-访问<https://portal.azure.cn/>登录Azure。  
+
+  访问<https://portal.azure.cn/>登录Azure。  
 
   ![](images/2020-04-01-11-17-22.png)  
 
 - 步骤2：添加IoT Hub  
-登录成功后如下图所示，选择“IoT Hub”。  
+
+  登录成功后如下图所示，选择“IoT Hub”。  
 
   ![](images/2020-04-01-11-20-56.png)  
 
@@ -47,6 +49,7 @@ Azure IoT Edge 将云分析和自定义业务逻辑移到设备，这样你的�
   ![](images/2020-04-01-11-28-51.png)  
 
 - 步骤3：添加IoT Edge设备  
+
   在“IoT Hub”中点击相应的IoT Hub，并进入该IoT Hub的“IoT Edge”页面，点击“Add an IoT Edge device”。  
 
   ![](images/2020-07-01-10-43-59.png)  
@@ -58,6 +61,7 @@ Azure IoT Edge 将云分析和自定义业务逻辑移到设备，这样你的�
 <a id="copy-connection-string"> </a>  
 
 - 步骤4：复制IoT Edge设备的连接字符串  
+
   IoT Edge设备创建成功后如下图所示：  
 
   ![](images/2020-07-01-10-46-25.png)  
@@ -80,10 +84,13 @@ Azure IoT Edge 将云分析和自定义业务逻辑移到设备，这样你的�
 
 #### 1.2.2 更新IG902软件版本
 - 更新IG902固件版本  
+
   如何更新IG902固件版本请参考[更新IG902软件版本](http://manual.ig.inhand.com.cn/zh_CN/latest/IG902%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#id1)。
 - 更新IG902 Docker SDK  
+
   如何更新IG902 Docker SDK请参考[安装Docker SDK](http://docker.ig.inhand.com.cn/zh_CN/latest/Docker%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C.html#docker-sdkdocker)
 - 更新IG902 Azure IoT Edge SDK  
+
   进入“边缘计算 >> 云厂商边缘计算”页面，取消勾选“启用安全守护程序”后，点击“升级”按钮，选择Azure IoT Edge SDK文件并点击“确定”。  
   
   ![](images/2020-07-01-11-07-21.png)  

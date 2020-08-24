@@ -37,17 +37,17 @@ Docker 是一个开源的应用容器引擎，让开发者可以打包他们的�
 <a id="set-lan-parameters"> </a>  
 
 ### 1.2 访问IG902
-访问IG902，请参考[访问IG902](http://manual.ig.inhand.com.cn/zh_CN/latest/IG902%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#lan-ig902)。
+访问IG902，请参考[访问IG902](http://manual.ig.inhand.com.cn/zh_CN/latest/IG902-Quick-Start-Manual-CN.html#set-lan-parameters)。
 
 <a id="set-wan-parameters"> </a>  
 
 ### 1.3 IG902连接Internet
-设置IG902联网，请参考[IG902连接Internet](http://manual.ig.inhand.com.cn/zh_CN/latest/IG902%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#wan-internet)。
+设置IG902联网，请参考[IG902连接Internet](http://manual.ig.inhand.com.cn/zh_CN/latest/IG902-Quick-Start-Manual-CN.html#set-wan-parameters)。
 
 <a id="update-the-firmware"> </a>  
 
 ### 1.4 更新IG902固件版本
-如需获取IG902产品最新固件版本及其功能特性信息，请联系客服。如需更新IG902的固件版本，请参考[更新IG902软件版本](http://manual.ig.inhand.com.cn/zh_CN/latest/IG902%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#id1)。<font color=#FF0000>（固件版本应为2.0.0.r12057及以上）</font>
+如需获取IG902产品最新固件版本及其功能特性信息，请联系客服。如需更新IG902的固件版本，请参考[更新IG902软件版本](http://manual.ig.inhand.com.cn/zh_CN/latest/IG902-Quick-Start-Manual-CN.html#update-the-software)。<font color=#FF0000>（固件版本应为2.0.0.r12057及以上）</font>
 
 <a id="enable-and-configure-docker-manager"> </a>  
 
