@@ -15,7 +15,7 @@ Azure IoT Edge 将云分析和自定义业务逻辑移到设备，这样你的�
 <a id="environmental-preparation"> </a>  
 
 ## 1. 环境准备
-开始之前，你需要准备以下事项（如何获取IG902软件版本请联系客服）：
+开始之前，你需要准备以下事项（你可以访问[资源中心](https://www.inhand.com.cn/downlist/edge-computing-gateway/)获取软件版本）：
 - Azure IoT账户
 - IG902固件版本：`v2.0.0.r12644`及以上
 - Docker SDK版本：`18.06.3-ce`及以上
