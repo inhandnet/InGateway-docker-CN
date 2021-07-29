@@ -23,7 +23,7 @@ AWS IoT Greengrass SDK支持IG902作为AWS IoT Greengrass核心（以下简称Gr
 <a id="prerequisites"> </a>
 
 ## 先决条件
-开始之前，你需要准备以下事项（如何获取IG902软件版本请联系客服）：
+开始之前，你需要准备以下事项（你可以访问[资源中心](https://www.inhand.com.cn/downlist/edge-computing-gateway/)获取软件版本）：
 - AWS IoT账户
 - IG902固件版本：`v2.0.0.r13054`及以上
 - AWS IoT Greengrass SDK版本：`1.10.2-RC1`及以上

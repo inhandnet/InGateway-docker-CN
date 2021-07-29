@@ -47,7 +47,7 @@ Docker 是一个开源的应用容器引擎，让开发者可以打包他们的�
 <a id="update-the-firmware"> </a>  
 
 ### 1.4 更新IG902固件版本
-如需获取IG902产品最新固件版本及其功能特性信息，请联系客服。如需更新IG902的固件版本，请参考[更新IG902软件版本](http://manual.ig.inhand.com.cn/zh_CN/latest/IG902-Quick-Start-Manual-CN.html#update-the-software)。<font color=#FF0000>（固件版本应为2.0.0.r12057及以上）</font>
+如需获取IG902产品最新固件版本及其功能特性信息，请访问[资源中心](https://www.inhand.com.cn/downlist/edge-computing-gateway/)。如需更新IG902的固件版本，请参考[更新IG902软件版本](http://manual.ig.inhand.com.cn/zh_CN/latest/IG902-Quick-Start-Manual-CN.html#update-the-software)。<font color=#FF0000>（固件版本应为2.0.0.r12057及以上）</font>
 
 <a id="enable-and-configure-docker-manager"> </a>  
 
@@ -56,7 +56,7 @@ Docker 是一个开源的应用容器引擎，让开发者可以打包他们的�
 <a id="install-docker-sdk-and-enable-docker-manager"> </a>  
 
 ### 2.1 安装Docker SDK并启用Docker管理器
-Docker SDK集成了运行docker镜像所需的运行环境以及docker镜像管理器，在使用Docker前必须先安装Docker SDK。如需获取Docker SDK请联系客服。  </br>
+Docker SDK集成了运行docker镜像所需的运行环境以及docker镜像管理器，在使用Docker前必须先安装Docker SDK，你可以访问[资源中心](https://www.inhand.com.cn/downlist/edge-computing-gateway/)获取软件版本。  </br>
 - 步骤1：已有Docker SDK后，进入IG902的“边缘计算>>Docker管理”页面，关闭Docker管理器并导入Docker SDK。  
 
   ![](images/2020-07-01-15-54-37.png)  
